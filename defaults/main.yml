@@ -1,0 +1,6 @@
+memcached_docker_max_client_sequential_requests: 20
+memcached_docker_listen: 127.0.0.1
+memcached_docker_logfile: /var/log/memcached.log
+memcached_docker_max_connections: 1024
+memcached_docker_memory: 64
+memcached_docker_port: 11211

@@ -1,0 +1,2 @@
+- include: memcached-docker.yml tags=memcached-docker
+- include: memcached-docker-datadog.yml tags=memcached-docker,datadog

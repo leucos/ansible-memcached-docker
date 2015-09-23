@@ -1,0 +1,17 @@
+- name: Gets and deploy memcached docker image
+  docker:
+    image: "memcached"
+    command: "-m {{ memcached_docker_memory }} -c {{ memcached_docker_max_connections }} -R {{ memcached_docker_max_client_sequential_requests }}"
+    name: "{{ memcached_docker_name | default(omit) }}"
+    state: reloaded
+#    docker_api_version: 1.12
+    docker_api_version: 1.18
+    pull: missing
+    restart_policy: always
+    ports:
+      - "{{ memcached_docker_port }}:11211"
+    volumes:
+      - /var/log/php-fpm-container:/var/log/php-fpm
+      - /srv/webapp:/srv/webapp
+      - /tmp:/tmp
+

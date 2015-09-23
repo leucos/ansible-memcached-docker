@@ -1,0 +1,18 @@
+- name: Creates fragments directory
+  file:
+    path: /etc/dd-agent/conf.d/mcache.fragments
+    state: directory
+
+- name: Creates config fragment for datadog
+  template:
+    src: datadog_entry_mcache.yaml.j2
+    dest: /etc/dd-agent/conf.d/mcache.fragments/{{ memcached_docker_port }}.fragment
+  when: datadog_enabled
+  notify: Assemble datadog memcache config file
+
+- name: Pushes config header for datadog
+  template:
+    src: datadog_header_mcache.yaml.j2
+    dest: /etc/dd-agent/conf.d/mcache.fragments/0.fragment
+  when: datadog_enabled
+  notify: Assemble datadog memcache config file

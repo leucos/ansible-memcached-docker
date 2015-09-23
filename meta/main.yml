@@ -1,0 +1,17 @@
+---
+
+dependencies:
+  - ansible-docker
+
+galaxy_info:
+  author: Michel Blanc
+  company: ACME Corp 
+  description: ansible-memcached-docker role
+  license: MIT
+  min_ansible_version: 1.6
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  categories:
+  - web

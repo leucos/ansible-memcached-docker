@@ -1,0 +1,3 @@
+#- src: acmecorp.role
+#- src: git+ssh://git@github.com/acmecorp/ansible-role.git
+#- src: https://github.com/acmecorp/ansible-role.git

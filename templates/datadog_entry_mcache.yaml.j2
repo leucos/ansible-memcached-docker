@@ -1,0 +1,6 @@
+  - url: localhost 
+    port: {{ memcached_docker_port }}
+    tags:
+      - memcache
+      - memcache:{{ memcached_docker_port }}
+      - memcache:{{ memcached_docker_name | default(memcached_docker_port) }}

@@ -1,0 +1,8 @@
+- name: Restart dd-agent
+  service: name=datadog-agent state=restarted
+
+- name: Assemble datadog memcache config file
+  assemble:
+    dest: /etc/dd-agent/conf.d/mcache.yaml
+    src: /etc/dd-agent/conf.d/mcache.fragments/
+  notify: Restart dd-agent
